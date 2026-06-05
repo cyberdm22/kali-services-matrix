@@ -27,6 +27,7 @@ This repository is modularized into dedicated service deep-dives:
 To follow along with the configurations and verify these services within a local, authorized Kali Linux environment, utilize the following core commands.
 
 ### 1. Network Socket Enumeration
+
 Validating which service is actively bound to a port requires kernel-level process isolation bypass (root privileges).
 
 ```bash
@@ -37,19 +38,21 @@ sudo netstat -antp
 sudo netstat -antp | grep :80
 ```
 
-###2. Service Management (Resolving Port Conflicts)
+### 2. Service Management (Resolving Port Conflicts)
+
 Apache2 and Nginx inherently conflict over Port 80. Manage the daemons using standard service controls:
 
-```Bash
+```bash
 # Transition from Apache2 to an Nginx architecture
 sudo service apache2 stop
 sudo service nginx start
 ```
 
-###3. Deploying Custom Web Roots
+### 3. Deploying Custom Web Roots
+
 To verify functional server redirection within the standard Debian web root:
 
-```Bash
+```bash
 cd /var/www/html/
 sudo mv index.html apache-backup.html
 echo "<h1>Core Network Services Matrix | cyberdm22</h1>" | sudo tee index.html
@@ -57,7 +60,8 @@ echo "<h1>Core Network Services Matrix | cyberdm22</h1>" | sudo tee index.html
 
 ---
 
-##⚖️ Legal Disclaimer & Dual-Use Technology Notice
-The materials, commands, and operational workflows documented across this repository are intended strictly for educational purposes, defensive network hardening, and authorized security research.
+## ⚖️ Legal Disclaimer & Dual-Use Technology Notice
 
-Tools described within this matrix (such as THC Hydra, sqlmap, and Burp Suite) constitute Dual-Use Technologies. While their possession and use in authorized audits are industry standard, the unauthorized execution of these techniques against systems without explicit, written contractual authorization violates statutory laws (e.g., the Computer Fraud and Abuse Act and international equivalents). Unauthorized application transforms a security assessment into a criminal breach, generating distinct forensic evidentiary trails.
+The materials, commands, and operational workflows documented across this repository are intended strictly for **educational purposes, defensive network hardening, and authorized security research**. 
+
+Tools described within this matrix (such as THC Hydra, sqlmap, and Burp Suite) constitute **Dual-Use Technologies**. While their possession and use in authorized audits are industry standard, the unauthorized execution of these techniques against systems without explicit, written contractual authorization violates statutory laws (e.g., the Computer Fraud and Abuse Act and international equivalents). Unauthorized application transforms a security assessment into a criminal breach, generating distinct forensic evidentiary trails.
