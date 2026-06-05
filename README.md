@@ -34,7 +34,7 @@ Validating which service is actively bound to a port requires kernel-level proce
 sudo netstat -antp
 
 # Specific filter for Apache2 / Nginx port bindings
-sudo netstat -antp | grep :80
+sudo netstat -antp | grep :80```
 
 ###2. Service Management (Resolving Port Conflicts)
 Apache2 and Nginx inherently conflict over Port 80. Manage the daemons using standard service controls:
@@ -42,7 +42,7 @@ Apache2 and Nginx inherently conflict over Port 80. Manage the daemons using sta
 ```Bash
 # Transition from Apache2 to an Nginx architecture
 sudo service apache2 stop
-sudo service nginx start
+sudo service nginx start```
 
 ###3. Deploying Custom Web Roots
 To verify functional server redirection within the standard Debian web root:
@@ -50,7 +50,8 @@ To verify functional server redirection within the standard Debian web root:
 ```Bash
 cd /var/www/html/
 sudo mv index.html apache-backup.html
-echo "<h1>Core Network Services Matrix | cyberdm22</h1>" | sudo tee index.html
+echo "<h1>Core Network Services Matrix | cyberdm22</h1>" | sudo tee index.html```
+---
 
 ##⚖️ Legal Disclaimer & Dual-Use Technology Notice
 The materials, commands, and operational workflows documented across this repository are intended strictly for educational purposes, defensive network hardening, and authorized security research.
